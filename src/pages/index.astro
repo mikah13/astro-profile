@@ -11,7 +11,7 @@ import avatar from '../assets/images/avatar.png'
 	<TitlePage title='Mike Hoang' />
 
 	<div
-		class='text-white m-auto grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]'
+		class='text-black dark:text-white m-auto grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]'
 	>
 		<Card class='col-span-1 md:col-span-3 md:row-span-2 flex flex-row'>
 			<div class='flex flex-col justify-between'>
@@ -28,16 +28,16 @@ import avatar from '../assets/images/avatar.png'
 				quality={100}
 				format='png'
 				loading='eager'
-				class='rounded-md w-auto max-h-[300px] md:max-h-[200px] my-8 object-cover'
+				class='bg-slate-400 dark:bg-slate-700 rounded-md w-auto max-h-[300px] md:max-h-[200px] my-8 object-cover'
 				alt={`Mike Hoang avatar`}
 			/>
 		</Card>
-		<Card class='col-span-1 md:col-span-1 md:row-span-3'>test</Card>
-		<Card class='col-span-1 md:col-span-1 md:row-span-2'>test</Card>
-		<Card class='col-span-1 md:col-span-2 md:row-span-1'>test</Card>
-		<Card class='col-span-1 md:col-span-1 md:row-span-1'>test</Card>
-		<Card class='col-span-1 md:col-span-1 md:row-span-1'>test</Card>
-		<Card class='col-span-1 md:col-span-1 md:row-span-1'>test</Card>
+		<Card class='col-span-1 md:col-span-1 md:row-span-3 dark:hover:border-green-600'>test</Card>
+		<Card class='col-span-1 md:col-span-1 md:row-span-2 dark:hover:border-blue-600'>test</Card>
+		<Card class='col-span-1 md:col-span-2 md:row-span-1 dark:hover:border-orange-600'>test</Card>
+		<Card class='col-span-1 md:col-span-1 md:row-span-1 dark:hover:border-yellow-600'>test</Card>
+		<Card class='col-span-1 md:col-span-1 md:row-span-1 dark:hover:border-pink-600'>test</Card>
+		<Card class='col-span-1 md:col-span-1 md:row-span-1 dark:hover:border-slate-600'>test</Card>
 	</div>
 </BaseLayout>
 
