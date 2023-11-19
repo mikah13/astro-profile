@@ -27,6 +27,4 @@ export default defineConfig({
 		drafts: true
 	}), sitemap(), tailwind()],
 
-	output: 'server',
-	adapter: lambdaAdapter()
 });
