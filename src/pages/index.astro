@@ -5,7 +5,9 @@ import TitlePage from '@/components/TitlePage'
 import BaseLayout from '@/layouts/BaseLayout'
 import { getPosts } from '@/utils'
 import { Image } from 'astro:assets'
-import avatar from '../assets/images/avatar.png'
+import HeaderLink from '@/components/HeaderLink'
+import TagIcon from '@/components/icons/TagIcon'
+import Intro from '@/components/Intro'
 ---
 
 <BaseLayout title='Home'>
@@ -13,35 +15,36 @@ import avatar from '../assets/images/avatar.png'
 		class='text-black dark:text-white m-auto grid gap-2 max-w-6xl overflow-hidden relative w-full p-4 sm:gap-2 md:grid-cols-2 md:gap-3 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]'
 	>
 		<Card class='col-span-1 md:col-span-3 md:row-span-2 flex flex-col md:space-y-0 md:flex-row'>
-			<div class='flex flex-col justify-between mt-4 md:mt-0'>
-				<p class='m-0 font-light text-xl'>
-					Hi, I'm <b class='font-bold'>Mike Hoang</b>, a software developer with a passion for
-					creating innovative applications. I always strive to make the complex seem effortless.
-				</p>
-				<div class='flex flex-row space-x-3 mt-10'>
-					<Button><span>1233333</span></Button>
-
-					<Button><span>1233333</span></Button>
-				</div>
-			</div>
-			<div class='h-full order-first md:order-last md:w-[300px]'>
-				<Image
-					src={avatar}
-					width={200}
-					height={200}
-					quality={100}
-					format='png'
-					loading='eager'
-					class='bg-slate-400 dark:bg-slate-700 rounded-md w-auto max-h-[200px] md:max-h-[150px] object-contain'
-					alt={`Mike Hoang avatar`}
-				/>
-			</div>
+			<Intro />
 		</Card>
 		<Card class='col-span-1 md:col-span-1 md:row-span-3 dark:hover:border-green-600'>
 			<h2 class='text-xl font-bold m-0'>About me</h2>
 		</Card>
 		<Card class='col-span-1 md:col-span-1 md:row-span-2 dark:hover:border-blue-600'>
 			<h2 class='text-xl font-bold m-0'>Links</h2>
+
+			<ul>
+				<li>
+					<HeaderLink href='/tags' class='flex items-center gap-1 text-2xl md:text-base'>
+						<TagIcon /> Tags
+					</HeaderLink>
+				</li>
+				<li>
+					<HeaderLink href='/tags' class='flex items-center gap-1 text-2xl md:text-base'>
+						<TagIcon /> Tags
+					</HeaderLink>
+				</li>
+				<li>
+					<HeaderLink href='/tags' class='flex items-center gap-1 text-2xl md:text-base'>
+						<TagIcon /> Tags
+					</HeaderLink>
+				</li>
+				<li>
+					<HeaderLink href='/tags' class='flex items-center gap-1 text-2xl md:text-base'>
+						<TagIcon /> Tags
+					</HeaderLink>
+				</li>
+			</ul>
 		</Card>
 		<Card class='col-span-1 md:col-span-2 md:row-span-1 dark:hover:border-orange-600'>
 			<h2 class='text-xl font-bold m-0'>Tech stacks</h2>

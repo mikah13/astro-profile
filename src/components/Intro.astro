@@ -1,0 +1,29 @@
+---
+import Button from '@/components/Button'
+import { Image } from 'astro:assets'
+import avatar from '../assets/images/avatar.png'
+---
+
+<div class='flex flex-col justify-between mt-4 md:mt-0'>
+	<p class='m-0 font-light text-xl'>
+		Hi, I'm <b class='font-bold'>Mike Hoang</b>, a software developer with a passion for creating
+		innovative applications. I always strive to make the complex seem effortless.
+	</p>
+	<div class='flex flex-row space-x-3 mt-10'>
+		<Button><span>1233333</span></Button>
+
+		<Button><span>1233333</span></Button>
+	</div>
+</div>
+<div class='h-full order-first md:order-last md:w-[300px]'>
+	<Image
+		src={avatar}
+		width={200}
+		height={200}
+		quality={100}
+		format='png'
+		loading='eager'
+		class='bg-slate-400 dark:bg-slate-700 rounded-md w-auto max-h-[200px] md:max-h-[150px] object-contain'
+		alt={`Mike Hoang avatar`}
+	/>
+</div>
