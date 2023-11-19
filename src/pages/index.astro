@@ -8,6 +8,8 @@ import { Image } from 'astro:assets'
 import HeaderLink from '@/components/HeaderLink'
 import TagIcon from '@/components/icons/TagIcon'
 import Intro from '@/components/Intro'
+import AboutMe from '@/components/AboutMe'
+import MyLinks from '@/components/MyLinks'
 ---
 
 <BaseLayout title='Home'>
@@ -18,33 +20,10 @@ import Intro from '@/components/Intro'
 			<Intro />
 		</Card>
 		<Card class='col-span-1 md:col-span-1 md:row-span-3 dark:hover:border-green-600'>
-			<h2 class='text-xl font-bold m-0'>About me</h2>
+			<AboutMe />
 		</Card>
 		<Card class='col-span-1 md:col-span-1 md:row-span-2 dark:hover:border-blue-600'>
-			<h2 class='text-xl font-bold m-0'>Links</h2>
-
-			<ul>
-				<li>
-					<HeaderLink href='/tags' class='flex items-center gap-1 text-2xl md:text-base'>
-						<TagIcon /> Tags
-					</HeaderLink>
-				</li>
-				<li>
-					<HeaderLink href='/tags' class='flex items-center gap-1 text-2xl md:text-base'>
-						<TagIcon /> Tags
-					</HeaderLink>
-				</li>
-				<li>
-					<HeaderLink href='/tags' class='flex items-center gap-1 text-2xl md:text-base'>
-						<TagIcon /> Tags
-					</HeaderLink>
-				</li>
-				<li>
-					<HeaderLink href='/tags' class='flex items-center gap-1 text-2xl md:text-base'>
-						<TagIcon /> Tags
-					</HeaderLink>
-				</li>
-			</ul>
+			<MyLinks />
 		</Card>
 		<Card class='col-span-1 md:col-span-2 md:row-span-1 dark:hover:border-orange-600'>
 			<h2 class='text-xl font-bold m-0'>Tech stacks</h2>
