@@ -1,21 +1,18 @@
 ---
 import Card from '@/components/Card'
-import Button from '@/components/Button'
-import TitlePage from '@/components/TitlePage'
+
 import BaseLayout from '@/layouts/BaseLayout'
-import { getPosts } from '@/utils'
-import { Image } from 'astro:assets'
-import HeaderLink from '@/components/HeaderLink'
-import TagIcon from '@/components/icons/TagIcon'
 import Intro from '@/components/Intro'
 import AboutMe from '@/components/AboutMe'
 import MyLinks from '@/components/MyLinks'
 import TechStack from '@/components/TechStack'
+import Learning from '@/components/Learning'
+import Reading from '@/components/Reading'
 ---
 
 <BaseLayout title='Home'>
 	<div
-		class='text-black dark:text-white m-auto grid gap-2 max-w-6xl overflow-hidden relative w-full p-4 sm:gap-2 md:grid-cols-2 md:gap-3 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]'
+		class='text-black dark:text-white m-auto grid gap-2 max-w-6xl overflow-hidden relative w-full p-4 sm:gap-2 md:grid-cols-2 md:gap-3 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px] pt-0'
 	>
 		<Card
 			class='col-span-1 md:col-span-3 md:row-span-2 flex flex-col md:space-y-0 md:flex-row hover:border-purple-600'
@@ -56,64 +53,12 @@ import TechStack from '@/components/TechStack'
 		<Card
 			class='col-span-1 md:col-span-1 md:row-span-1 hover:border-pink-600 dark:hover:border-pink-600'
 		>
-			<div class='flex flex-col space-y-2'>
-				<h2 class='text-xl font-bold m-0'>Learning</h2>
-				<div class='flex items-center mb-4'>
-					<input
-						id='devops-checkbox'
-						type='checkbox'
-						value=''
-						class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
-					/>
-					<label for='devops-checkbox' class='ms-2 text-sm'>DevOps</label>
-				</div>
-				<div class='flex items-center mb-4'>
-					<input
-						id='data-checkbox'
-						type='checkbox'
-						value=''
-						class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
-					/>
-					<label for='data-checkbox' class='ms-2 text-sm'>Data Streaming</label>
-				</div>
-
-				<div class='flex items-center mb-4'>
-					<input
-						id='rust-checkbox'
-						type='checkbox'
-						value=''
-						class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
-					/>
-					<label for='rust-checkbox' class='ms-2 text-sm'>Rust</label>
-				</div>
-			</div>
+			<Learning />
 		</Card>
 		<Card
 			class='col-span-1 md:col-span-1 md:row-span-1 hover:border-slate-600 dark:hover:border-slate-600'
 		>
-			<div class='flex flex-col space-y-2'>
-				<h2 class='text-xl font-bold m-0'>Reading</h2>
-				<ul class='flex flex-col space-y-2'>
-					<li>
-						<a
-							class='text-sm md:text-base hover:text-blue-500'
-							href='https://www.amazon.ca/Designing-Data-Intensive-Applications-Reliable-Maintainable/dp/1449373321'
-							target='_blank'
-						>
-							Designing Data-Intensive Applications</a
-						>
-					</li>
-					<li>
-						<a
-							class='text-sm md:text-base hover:text-blue-500'
-							href='https://www.amazon.ca/Blue-Ocean-Strategy-Chan-Kim/dp/1591396190'
-							target='_blank'
-						>
-							Blue Ocean Strategy</a
-						>
-					</li>
-				</ul>
-			</div>
+			<Reading />
 		</Card>
 	</div>
 </BaseLayout>
