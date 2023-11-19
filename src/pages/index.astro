@@ -1,16 +1,19 @@
 ---
-import ListCategories from '@/components/ListCategories'
-import ListPosts from '@/components/ListPosts'
+import Card from '@/components/Card'
 import TitlePage from '@/components/TitlePage'
 import BaseLayout from '@/layouts/BaseLayout'
 import { getPosts } from '@/utils'
-
-const MAX_POSTS = 5 // max number of posts to show on the home page
-const posts = await getPosts(MAX_POSTS)
 ---
 
 <BaseLayout title='Home'>
 	<TitlePage title='Home page' />
+
+	<div
+		class='text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]'
+	>
+		<Card>test</Card>
+		<Card>test</Card>
+	</div>
 </BaseLayout>
 
 <script>
