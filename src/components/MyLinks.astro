@@ -5,32 +5,50 @@ import GithubIcon from './icons/GithubIcon.astro'
 import Linkedin from './icons/Linkedin.astro'
 import TagIcon from './icons/TagIcon.astro'
 import TextDoc from './icons/TextDoc.astro'
+import TwitterIcon from './icons/TwitterIcon.astro'
 ---
 
-<div>
+<div class='flex flex-col space-y-4'>
 	<h2 class='text-xl font-bold m-0'>Links</h2>
 
-	<ul>
+	<ul class='flex flex-col space-y-2'>
 		<li>
 			<HeaderLink
 				href='https://silver-arluene-38.tiiny.site/'
-				class='flex items-center gap-1 text-2xl md:text-base'
+				class='flex items-center gap-1 text-2xl md:text-base hover:text-blue-500'
 			>
 				<TextDoc /> Resume
 			</HeaderLink>
 		</li>
 		<li>
-			<HeaderLink href='/tags' class='flex items-center gap-1 text-2xl md:text-base'>
+			<HeaderLink
+				href='https://github.com/mikah13'
+				class='flex items-center gap-1 text-2xl md:text-base hover:text-blue-500'
+			>
 				<GithubIcon /> GitHub
 			</HeaderLink>
 		</li>
 		<li>
-			<HeaderLink href='/tags' class='flex items-center gap-1 text-2xl md:text-base'>
+			<HeaderLink
+				href='https://www.linkedin.com/in/mike-hoang-2907/'
+				class='flex items-center gap-1 text-2xl md:text-base hover:text-blue-500'
+			>
 				<Linkedin /> LinkedIn
 			</HeaderLink>
 		</li>
 		<li>
-			<HeaderLink href='/tags' class='flex items-center gap-1 text-2xl md:text-base'>
+			<HeaderLink
+				href='https://twitter.com/FollowMikah13'
+				class='flex items-center gap-1 text-2xl md:text-base hover:text-blue-500'
+			>
+				<TwitterIcon /> Twitter
+			</HeaderLink>
+		</li>
+		<li>
+			<HeaderLink
+				href='mailto:anhminhhoang13@gmail.com'
+				class='flex items-center gap-1 text-2xl md:text-base hover:text-blue-500'
+			>
 				<Email /> Email
 			</HeaderLink>
 		</li>
