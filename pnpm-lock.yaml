@@ -22,9 +22,6 @@ devDependencies:
   '@astrojs/tailwind':
     specifier: 5.0.1
     version: 5.0.1(astro@3.5.3)(tailwindcss@3.3.5)
-  '@common-web/astro-lambda-edge':
-    specifier: ^1.0.2
-    version: 1.0.2
   '@pagefind/default-ui':
     specifier: ^1.0.3
     version: 1.0.3
@@ -879,10 +876,6 @@ packages:
       '@codemirror/state': 6.3.1
       style-mod: 4.1.0
       w3c-keyname: 2.2.8
-    dev: true
-
-  /@common-web/astro-lambda-edge@1.0.2:
-    resolution: {integrity: sha512-A9/IOloFX0fcqqi8JoMXfBT/yUcPHDVFwJpi43P/61xsxC8IWgKang3SAWNRAelq0miind5xoSNF7W94hZ7LUA==}
     dev: true
 
   /@emoji-mart/data@1.1.2:
