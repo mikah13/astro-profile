@@ -2,7 +2,7 @@
 	"extends": "astro/tsconfigs/strict",
 	"compilerOptions": {
 		"strictNullChecks": true,
-		"baseUrl": ".",
+		"baseUrl": "/Users/mike/Mike/Projects/astro-profile",
 		"verbatimModuleSyntax": true,
 		"paths": {
 			"@/components/*": ["src/components/*.astro"],
@@ -11,7 +11,9 @@
 			"@/data/*": ["src/data/*"],
 			"@/site-config": ["src/data/site.config.ts"],
 			"@/styles": ["src/styles/"]
-		}
+		},
+		"jsx": "react-jsx",
+		"jsxImportSource": "react"
 	},
 	"exclude": ["node_modules", "**/node_modules/*", ".vscode", "dist"]
 }
