@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import { remarkReadingTime } from './src/utils/readTime.ts';
 
-import react from "@astrojs/react";
+import lambdaAdapter from '@common-web/astro-lambda-edge';
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,5 +25,8 @@ export default defineConfig({
 			wrap: true
 		},
 		drafts: true
-	}), sitemap(), tailwind()]
+	}), sitemap(), tailwind()],
+
+	output: 'server',
+	adapter: lambdaAdapter()
 });

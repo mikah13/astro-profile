@@ -6,6 +6,7 @@ import ProviderTheme from '@/components/ProviderTheme'
 import ProviderAnimations from '@/components/ProviderAnimations'
 import TwSizeIndicator from '@/components/TwSizeIndicator'
 import EditBlog from '@/components/editBlog'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 const { title, description, image, articleDate } = Astro.props
 ---
 
@@ -24,6 +25,7 @@ const { title, description, image, articleDate } = Astro.props
 			<slot />
 			<Footer />
 		</main>
+		<GoogleAnalytics id='G-ERKX6RT5L3' />
 		<TwSizeIndicator />
 		<EditBlog />
 	</body>
