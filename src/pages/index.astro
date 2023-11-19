@@ -3,19 +3,34 @@ import Card from '@/components/Card'
 import TitlePage from '@/components/TitlePage'
 import BaseLayout from '@/layouts/BaseLayout'
 import { getPosts } from '@/utils'
+import { Image } from 'astro:assets'
+import avatar from '../assets/images/avatar.png'
 ---
 
 <BaseLayout title='Home'>
-	<TitlePage title='Home page' />
+	<TitlePage title='Mike Hoang' />
 
 	<div
 		class='text-white m-auto grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]'
 	>
-		<Card class='col-span-1 md:col-span-3 md:row-span-2'>
-			<p class='m-0 font-light text-xl'>
-				Hi, I'm <b class='font-bold'>Mike Hoang</b>, a software developer with a passion for
-				creating innovative web applications. I always strive to make the complex seem effortless.
-			</p>
+		<Card class='col-span-1 md:col-span-3 md:row-span-2 flex flex-row'>
+			<div class='flex flex-col justify-between'>
+				<p class='m-0 font-light text-xl'>
+					Hi, I'm <b class='font-bold'>Mike Hoang</b>, a software developer with a passion for
+					creating innovative web applications. I always strive to make the complex seem effortless.
+				</p>
+				<div>123</div>
+			</div>
+			<Image
+				src={avatar}
+				width={400}
+				height={200}
+				quality={100}
+				format='png'
+				loading='eager'
+				class='rounded-md w-auto max-h-[300px] md:max-h-[200px] my-8 object-cover'
+				alt={`Mike Hoang avatar`}
+			/>
 		</Card>
 		<Card class='col-span-1 md:col-span-1 md:row-span-3'>test</Card>
 		<Card class='col-span-1 md:col-span-1 md:row-span-2'>test</Card>
