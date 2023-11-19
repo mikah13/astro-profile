@@ -12,7 +12,7 @@ export const siteConfig: SiteConfig = {
 	author: 'Mike Hoang',
 	title: 'Mike Hoang - Software Developer',
 	description:
-		'I am a software developer with a passion for creating innovative web applications. Well-versed in React.js and TypeScript, I always strive to make the complex seem effortless.',
+		'I am a software developer with a passion for creating innovative web applications. I always strive to make the complex seem effortless.',
 	lang: 'en-GB',
 	ogLocale: 'en_GB',
 	shareMessage: 'Share this post', // Message to share a post on social media
