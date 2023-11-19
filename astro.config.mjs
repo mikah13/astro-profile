@@ -4,7 +4,6 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import { remarkReadingTime } from './src/utils/readTime.ts';
 
-import lambdaAdapter from '@common-web/astro-lambda-edge';
 
 // https://astro.build/config
 export default defineConfig({
