@@ -5,12 +5,12 @@
 		"baseUrl": "/Users/mike/Mike/Projects/astro-profile",
 		"verbatimModuleSyntax": true,
 		"paths": {
-			"@/components/*": ["src/components/*.astro"],
-			"@/layouts/*": ["src/layouts/*.astro"],
-			"@/utils": ["src/utils/index.ts"],
-			"@/data/*": ["src/data/*"],
-			"@/site-config": ["src/data/site.config.ts"],
-			"@/styles": ["src/styles/"]
+			"@/components/*": ["./src/components/*.astro"],
+			"@/layouts/*": ["./src/layouts/*.astro"],
+			"@/utils": ["./src/utils/index.ts"],
+			"@/data/*": ["./src/data/*"],
+			"@/site-config": ["./src/data/site.config.ts"],
+			"@/styles": ["./src/styles/"]
 		},
 		"jsx": "react-jsx",
 		"jsxImportSource": "react"
