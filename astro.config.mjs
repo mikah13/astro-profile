@@ -6,6 +6,13 @@ import { remarkReadingTime } from './src/utils/readTime.ts';
 
 // https://astro.build/config
 export default defineConfig({
+	vite: {
+		build: {
+			rollupOptions: {
+
+			},
+		},
+	},
 	site: 'https://mike-hoang-dev.vercel.app/',
 	// Write here your website url
 	markdown: {

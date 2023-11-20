@@ -2,7 +2,7 @@
 	"extends": "astro/tsconfigs/strict",
 	"compilerOptions": {
 		"strictNullChecks": true,
-		"baseUrl": "/Users/mike/Mike/Projects/astro-profile",
+		"baseUrl": ".",
 		"verbatimModuleSyntax": true,
 		"paths": {
 			"@/components/*": ["./src/components/*.astro"],
