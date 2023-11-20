@@ -1,4 +1,4 @@
-import { siteConfig } from '@/data/site.config'
+import { siteConfig } from '../data/site.config'
 import rss from '@astrojs/rss'
 import { getCollection } from 'astro:content'
 
