@@ -5,7 +5,7 @@ const { class: className, href } = Astro.props
 <a href={href} target='_blank'>
 	<button
 		class:list={[
-			'text-xl max-h-[50px] shadow-[2px_2px_0px_2px_#000]  dark:shadow-[2px_2px_0px_2px_#fff] hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1px_1px_0px_1px_#000]  dark:active:shadow-none active:shadow-none active:translate-x-[3px] active:translate-y-[3px] px-3 py-2 border border-black dark:border-white  transition-colors duration-150 ease-in-out bg-zinc-50 dark:bg-zinc-950 cursor-pointer rounded-lg hover:text-blue-500',
+			'text-xl max-h-[50px] shadow-[2px_2px_0px_2px_#000]  dark:shadow-[2px_2px_0px_2px_#fff] hover:translate-x-[1.5px] hover:translate-y-[1.5px] dark:hover:translate-x-[1.5px] dark:hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0px_1.5px_#000] dark:hover:shadow-[1.5px_1.5px_0px_1.5px_#fff]  dark:active:shadow-none active:shadow-none active:translate-x-[3px] active:translate-y-[3px] px-3 py-2 border border-black dark:border-white  transition-colors duration-150 ease-in-out bg-zinc-50 dark:bg-zinc-950 cursor-pointer rounded-lg hover:text-blue-500',
 			className
 		]}><slot /></button
 	></a
