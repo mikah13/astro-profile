@@ -1,11 +1,11 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout'
-import ListPosts from '@/components/ListPosts'
 import ListCategories from '@/components/ListCategories'
-import TitlePage from '@/components/TitlePage'
-import { sluglify, unsluglify, getCategories, getPosts } from '@/utils'
-import { siteConfig } from '@/data/site.config'
+import ListPosts from '@/components/ListPosts'
 import Pagination from '@/components/Pagination'
+import TitlePage from '@/components/TitlePage'
+import { siteConfig } from '@/data/site.config'
+import BaseLayout from '@/layouts/BaseLayout'
+import { getCategories, getPosts, sluglify, unsluglify } from '@/utils'
 
 export async function getStaticPaths({ paginate }: any) {
 	const categories = await getCategories()

@@ -1,24 +1,27 @@
 ---
-import Card from '@/components/Card'
-import BaseLayout from '@/layouts/BaseLayout'
-import Intro from '@/components/Intro'
 import AboutMe from '@/components/AboutMe'
-import MyLinks from '@/components/MyLinks'
-import TechStack from '@/components/TechStack'
+import Card from '@/components/Card'
+import Intro from '@/components/Intro'
 import Learning from '@/components/Learning'
-import Reading from '@/components/Reading'
+import MyLinks from '@/components/MyLinks'
 import Quote from '@/components/Quote'
+import Reading from '@/components/Reading'
+import TechStack from '@/components/TechStack'
+import BaseLayout from '@/layouts/BaseLayout'
+import avatar from '../assets/images/avatar.png'
+import { Image } from 'astro:assets'
 ---
 
 <BaseLayout title='Home'>
 	<div
-		class='text-black dark:text-white m-auto grid gap-2 max-w-6xl overflow-hidden relative w-full p-4 sm:gap-2 md:grid-cols-2 md:gap-3 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px] pt-0'
+		class='text-black dark:text-white m-auto grid gap-2 max-w-6xl overflow-hidden relative w-full p-4 sm:gap-2 md:grid-cols-3 md:gap-3 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px] pt-0'
 	>
 		<Card
-			class='col-span-1 md:col-span-3 md:row-span-2 flex flex-col md:space-y-0 md:flex-row hover:border-purple-600'
+			class='col-span-1 md:col-span-3 md:row-span-2 flex flex-col md:space-y-0 md:space-x-4 md:flex-row hover:border-purple-600'
 		>
 			<Intro />
 		</Card>
+
 		<Card
 			class='col-span-1 md:col-span-1 md:row-span-3 hover:border-green-600 dark:hover:border-green-600'
 		>
@@ -29,11 +32,22 @@ import Quote from '@/components/Quote'
 		>
 			<MyLinks />
 		</Card>
+		<Card class='hidden md:block md:col-span-1 md:row-span-2 lg:hidden'>
+			<Image
+				src={avatar}
+				quality={100}
+				format='png'
+				loading='eager'
+				class='bg-slate-400 dark:bg-slate-700 rounded-md w-auto h-full object-contain'
+				alt={`Mike Hoang avatar`}
+			/>
+		</Card>
 		<Card
 			class='col-span-1 md:col-span-2 md:row-span-1 hover:border-orange-600 dark:hover:border-orange-600'
 		>
 			<TechStack />
 		</Card>
+
 		<Card
 			class='col-span-1 md:col-span-1 md:row-span-1 hover:border-yellow-600 dark:hover:border-yellow-600'
 		>
