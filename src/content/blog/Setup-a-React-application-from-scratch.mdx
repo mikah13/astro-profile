@@ -1,0 +1,135 @@
+---
+heroImage: /src/assets/images/post1.png
+category: Web Dev
+description: Steps to build your own React application using Webpack and Babel
+pubDate: 2019-11-04T08:00:00.000Z
+tags:
+  - Webpack
+  - React
+title: Setup a React application from scratch
+---
+
+# Installation
+
+## Required Files
+
+**.babelrc**
+
+```showLineNumbers
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "plugins": ["@babel/plugin-proposal-class-properties"]
+}
+```
+
+**webpack.config.js**
+
+```js
+module.exports = {
+	entry: ['babel-polyfill', './src/index'],
+	watch: true,
+	module: {
+		rules: [
+			{
+				test: /\.(js|jsx)$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader'
+				}
+			},
+			{
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader']
+			},
+			{
+				test: /\.(png|jp(e*)g|svg)$/,
+				use: [
+					{
+						loader: 'url-loader',
+						options: {
+							limit: 8000, // Convert images < 8kb to base64 strings
+							name: 'images/[hash]-[name].[ext]'
+						}
+					}
+				]
+			}
+		]
+	}
+}
+```
+
+## Dependecies
+
+- <a href='https://nodejs.org/en/'>Node</a>
+- <a href='https://www.npmjs.com/'>npm</a>
+
+## Required Packages
+
+`npm i --save babel-cli babel-polyfill babel-preset-react-app react react-dom @babel/cli @babel/core @babel/plugin-proposal-class-properties "@babel/preset-env @babel/preset-react babel-loader babel-preset-minify css-loader file-loader url-loader webpack webpack-cli webpack-dev-server`
+
+### package.json
+
+```json
+{
+	"name": "rhpl",
+	"version": "1.0.0",
+	"description": "",
+	"main": "App.js",
+	"scripts": {
+		"build": "webpack --mode production",
+		"start": "webpack --mode development"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-polyfill": "^6.26.0",
+		"babel-preset-es2015-ie": "^6.7.0",
+		"babel-preset-react-app": "^3.1.2",
+		"react": "^16.9.0",
+		"react-dom": "^16.9.0",
+		"react-icons": "^3.7.0"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.6.0",
+		"@babel/core": "^7.6.0",
+		"@babel/plugin-proposal-class-properties": "^7.5.5",
+		"@babel/preset-env": "^7.6.0",
+		"@babel/preset-react": "^7.0.0",
+		"babel-loader": "^8.0.6",
+		"babel-preset-minify": "^0.5.1",
+		"css-loader": "^3.2.0",
+		"file-loader": "^4.2.0",
+		"style-loader": "^1.0.0",
+		"url-loader": "^2.1.0",
+		"webpack": "^4.40.2",
+		"webpack-cli": "^3.3.9",
+		"webpack-dev-server": "^3.8.1"
+	}
+}
+```
+
+## Note
+
+- `import "babel-polyfill";` as the first line in index.js to support IE
+
+## Compilation
+
+Run `npm start` for development build or `npm run build` for production build
+
+# Folder Structure
+
+## /src
+
+This is the main folder for all the .css and .js files:
+
+- assets: folder for all the images or other static digital assets
+- components: all the common components that can be shared between pages (e.g: Layout, Header, Footer ...)
+- lib: external libraries
+- pages: contains seperated folders for each page
+- services: helper functions
+- styles: global stylesheet
+
+## /dist
+
+Built JavaScript file, everything will be minified and the OPAC will use this file to render everything
