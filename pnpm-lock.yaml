@@ -20,8 +20,8 @@ devDependencies:
     specifier: 3.0.1
     version: 3.0.1
   '@astrojs/tailwind':
-    specifier: 5.0.1
-    version: 5.0.1(astro@3.5.3)(tailwindcss@3.3.5)
+    specifier: 5.0.2
+    version: 5.0.2(astro@3.5.3)(tailwindcss@3.3.5)
   '@pagefind/default-ui':
     specifier: ^1.0.3
     version: 1.0.3
@@ -244,10 +244,10 @@ packages:
       zod: 3.21.1
     dev: true
 
-  /@astrojs/tailwind@5.0.1(astro@3.5.3)(tailwindcss@3.3.5):
-    resolution: {integrity: sha512-HzguDH+q1v8NhZIu245UtXfz5tuy4IAd/TND92z5vyftYtGdjDLdBeHhMH4Wd91/0sIPPNRz9NUfToprI636YQ==}
+  /@astrojs/tailwind@5.0.2(astro@3.5.3)(tailwindcss@3.3.5):
+    resolution: {integrity: sha512-oXqeqmBlkQmsltrsU9nEWeXOtrZIAHW8dcmX7BCdrjzPnU6dPwWzAwhddNQ9ihKiWwsLnlbwQZIo2CDigcZlIA==}
     peerDependencies:
-      astro: ^3.2.3
+      astro: ^3.2.4
       tailwindcss: ^3.0.24
     dependencies:
       astro: 3.5.3(typescript@5.2.2)
