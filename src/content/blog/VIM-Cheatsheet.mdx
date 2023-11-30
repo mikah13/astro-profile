@@ -1,0 +1,74 @@
+---
+heroImage: /src/assets/images/photo-1658232212757-9ddbb370f675.avif
+category: Bookmark
+description: A place for me to document my Vim learning journey
+pubDate: 2023-11-29T08:00:00.000Z
+tags:
+  - Vim
+title: VIM Cheatsheet
+---
+
+# Vim Keyboard Shortcut Cheatsheet
+
+## Navigation
+
+- `h`: Move left
+- `j`: Move down
+- `k`: Move up
+- `l`: Move right
+
+## Basic Editing
+
+- `i`: Insert mode before the cursor
+- `a`: Insert mode after the cursor
+- `o`: Open a new line below the current line
+- `O`: Open a new line above the current line
+- `x`: Delete the character under the cursor
+- `dd`: Delete the current line
+- `yy`: Yank (copy) the current line
+- `p`: Paste the yanked or deleted text after the cursor
+- `u`: Undo
+- `Ctrl + r`: Redo
+
+## Saving and Exiting
+
+- `:w`: Save (write) the file
+- `:q`: Quit (close) Vim
+- `:wq` or `ZZ`: Save and quit
+
+## Search and Replace
+
+- `/pattern`: Search for a pattern
+- `n`: Move to the next search result
+- `N`: Move to the previous search result
+- `:s/old/new/g`: Replace all occurrences of 'old' with 'new' in the entire file
+
+## Visual Mode
+
+- `v`: Enter visual mode
+- `V`: Enter visual line mode
+- `Ctrl + v`: Enter visual block mode
+
+## Advanced Navigation
+
+- `w`: Move forward by a word
+- `b`: Move backward by a word
+- `e`: Move to the end of a word
+- `%`: Jump to matching parenthesis, bracket, or brace
+- `t<char>`: Move to the next occurrence of `<char>`
+
+## Window Management
+
+- `:split`: Split the window horizontally
+- `:vsplit`: Split the window vertically
+- `Ctrl + w, w`: Switch between windows
+- `Ctrl + w, h/j/k/l`: Navigate between windows
+
+## Miscellaneous
+
+- `:help keyword`: Open help for a keyword
+- `:q!`: Quit without saving changes
+- `:set number`: Show line numbers
+- `:set nonumber`: Hide line numbers
+- `:set ignorecase`: Ignore case when searching
+- `:set smartcase`: Case-sensitive if search pattern contains an uppercase letter
