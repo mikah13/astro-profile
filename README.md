@@ -11,20 +11,12 @@
 ## 📌 Table Of Contents
 
 - [📌 Table Of Contents](#-table-of-contents)
-- [💻 Demo](#-demo)
 - [🦙 Tina CMS](#-tina-cms)
 - [💪 Features:](#-features)
 - [⚙️ Stack](#️-stack)
 - [👨🏻‍💻 Running Locally](#-running-locally)
 - [📐 Configure](#-configure)
 - [🧞 Commands](#-commands)
-
-## 💻 Demo
-
-Check out the [Demo](https://blog-template-gray.vercel.app/), hosted on Vercel
-<br/>
-
-https://github.com/danielcgilibert/blog-template/assets/44746462/56b8399e-cc5b-45a8-b9d2-d69833ecadb1
 
 ## 🦙 Tina CMS
 
@@ -33,10 +25,6 @@ By default, this template comes pre-configured with Tina CMS.
 Now you can create your posts directly from the CMS without the need to do it manually.
 
 If you decide to use Tina, it's not necessary to add any properties to the Markdown files, Tina does it automatically.
-
-Example:
-
-https://github.com/danielcgilibert/blog-template/assets/44746462/51ae324c-d383-40be-9b16-db159d1af15d
 
 The documentation for Tina CMS can be found [here](https://tina.io/docs/)
 
