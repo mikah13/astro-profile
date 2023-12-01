@@ -14,7 +14,7 @@ const { title, description = siteConfig.description, ogImage, articleDate } = As
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const socialImageURL = new URL(ogImage ? ogImage : '/open-graph.png', Astro.url).href
 
-const titleSeparator = '•'
+const titleSeparator = '|'
 
 const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
 ---
