@@ -1,0 +1,88 @@
+---
+heroImage: /src/assets/images/Screen Shot 2023-12-02 at 5.38.06 PM.png
+category: Web Dev
+description: >-
+  In this blog, I will share my way to celebrate Christmas as a software
+  engineer and how you can use this approach to stay ahead of the game.
+pubDate: 2023-12-02T08:00:00.000Z
+tags:
+  - Advent of Code
+  - React
+  - TypeScript
+  - Programming
+title: What I do to prepare for Christmas (as a Software Engineer)
+---
+
+## Intro
+
+Christmas is coming, and I'm sure each one of us is busy with a lot of work and planning for this holiday season. For those who want to go extra above and beyond, Chrismas holiday is the perfect time to pick up something new to learn and add to your bag of knowledge. Maybe it's some programming languages that you have always been wanting to learn, maybe it's a framework that you couldn't find time to read the docs, or maybe it's a cool program you were going to complete. Whatever goal you have in mind, remember to keep it small and entertaing for you. After all, you want to have sometimes to enjoy your holiday too.
+
+In this blog, I will list some cool things you can do to level up your programming skills during this season.
+
+## [Advent of Code](https://adventofcode.com/)
+
+Advent of Code is an annual set of Christmas-themed computer programming challenges that follow an Advent calendar. It has been running since 2015. The programming puzzles cover a variety of skill sets and skill levels and can be solved using any programming language.
+
+People use them for interview prep, company training, university coursework, practice problems, a speed contest, or to challenge each other.
+
+You don't need a computer science background to participate - just a little programming knowledge and some problem-solving skills will get you pretty far. Nor do you need a fancy computer; every problem has a solution that completes in at most 15 seconds on ten-year-old hardware.
+
+## [Advent of TypeScript](https://typehero.dev/aot-2023)
+
+Like Advent of Code, typehero also hosts their own Advent of TypeScript, where you will complete all your challenges in TypeScript. One nice thing I love about this platform is that if you are new to TypeScript or if you want to brush up on some TypeScript, this set of challenges will help you. They also offer a very nice course for beginners to more advanced level TypeScript problems for you to practice.
+
+If you prefer doing these types of challenges in JavaScript, you can also find them here: [https://adventjs.dev/](https://adventjs.dev/)
+
+## [Santa Tracker](https://santatracker.google.com/codelab.html)
+
+If you want to teach young kids to learn coding, Santa Tracker is a perfect place. They offer nice sets of puzzles that teaches you different coding technique like looping, if-else, logical operations in a very kid-friendly visual. Made by a team of Google, it's a place to explore, play and learn with Santa's elves all December long.
+
+## Side Projects
+
+I also like to start some small side projects to do for this Chrismas. It can be anything really, for example I wrote a small program to display a Chrismas tree as you can see in the thumbnail picture.
+
+If you want some reference and implement your own, here is the source code:
+
+```ts
+const ASTERISK = '🎄'
+const STAR = '🌟'
+const GIFT = '🎁'
+const RED_CIRCLE = '🔴'
+const BLUE_CIRCLE = '🔵'
+const GREEN_CIRCLE = '💚'
+const TRUNK = '📦'
+
+const RAN_LIST = [GIFT, STAR, RED_CIRCLE, BLUE_CIRCLE, GREEN_CIRCLE]
+
+function getRandomElement(array: string[]): string {
+	const randomIndex = Math.floor(Math.random() * array.length)
+	return array[randomIndex]
+}
+
+function generateLine(time: number): string {
+	const randomIndex = Math.floor(Math.random() * (time + 1))
+
+	return new Array(time)
+		.fill(ASTERISK)
+		.map((e, i) => (i === randomIndex ? getRandomElement(RAN_LIST) : e))
+		.join('')
+}
+function drawChristmasTree(height: number): void {
+	for (let i = 1; i <= height; i++) {
+		const spaces = ' '.repeat(height - i)
+		const stars = generateLine(i)
+		console.log(spaces + stars)
+	}
+
+	// Draw the tree trunk
+	const trunkSpaces = ' '.repeat(height - 1)
+	console.log(trunkSpaces + TRUNK)
+	console.log(trunkSpaces + TRUNK)
+}
+
+// Set the height of the Christmas tree
+const treeHeight = 15
+
+// Draw the Christmas tree
+drawChristmasTree(treeHeight)
+```
