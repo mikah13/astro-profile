@@ -13,7 +13,8 @@ export default defineConfig({
 			},
 		},
 	},
-	site: 'https://mike-hoang-dev.vercel.app/',
+
+	site: 'https://mikehoang.dev/',
 	// Write here your website url
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
