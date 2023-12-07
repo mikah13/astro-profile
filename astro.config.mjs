@@ -6,6 +6,7 @@ import { remarkReadingTime } from './src/utils/readTime.ts';
 
 // https://astro.build/config
 export default defineConfig({
+	output: 'server',
 	vite: {
 		build: {
 			rollupOptions: {
