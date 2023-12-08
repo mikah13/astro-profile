@@ -34,7 +34,6 @@
 	},
 	"dependencies": {
 		"@astrojs/rss": "4.0.1",
-		"@supabase/supabase-js": "^2.39.0",
 		"astro": "4.0.3"
 	},
 	"devDependencies": {
