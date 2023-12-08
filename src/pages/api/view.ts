@@ -5,14 +5,9 @@ export const GET: APIRoute = async (context) => {
 	try {
 		const params = context.url.searchParams
 		const id = params.get('id')?.trim() || ''
-
-		let { data, error } = await supabase
-			.from('PageView')
-			.select('*')
-			.eq('pageid', id)
+		let { data, error } = await supabase.from('PageView').select('*').eq('pageid', id)
 
 		if (data && data.length === 1) {
-			console.log(data)
 			const updateRecord = await supabase
 				.from('PageView')
 				.update({ total: data[0].total + 1 })
@@ -20,10 +15,7 @@ export const GET: APIRoute = async (context) => {
 				.select()
 			return new Response(JSON.stringify(updateRecord))
 		} else {
-			const upsertRecord = await supabase
-				.from('PageView')
-				.upsert({ pageid: id, total: 1 })
-				.select()
+			const upsertRecord = await supabase.from('PageView').upsert({ pageid: id, total: 1 }).select()
 			return new Response(JSON.stringify(upsertRecord))
 		}
 
@@ -36,7 +28,7 @@ export const GET: APIRoute = async (context) => {
 	return new Response(
 		JSON.stringify({
 			name: 'Astro',
-			url: 'https://astro.build/',
+			url: 'https://astro.build/'
 		})
 	)
 }

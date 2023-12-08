@@ -7,12 +7,9 @@ import Share from '@/components/Share'
 import TableOfContents from '@/components/TableOfContents'
 import { getPosts } from '@/utils'
 import SButton from '@/components/mdx/SButton'
-// import { supabase } from 'src/utils/db'
 
 const posts = await getCollection('blog')
 export async function getStaticPaths() {
-	// const runPageView = await supabase.rpc('view-total-increment', { id: post.slug })
-	// console.log({ runPageView })
 	const posts = await getPosts()
 	return posts.map((post) => ({
 		params: { slug: post.slug },
