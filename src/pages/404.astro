@@ -1,0 +1,83 @@
+---
+import AboutMe from '@/components/AboutMe'
+import Card from '@/components/Card'
+import Intro from '@/components/Intro'
+import Learning from '@/components/Learning'
+import MyLinks from '@/components/MyLinks'
+import Quote from '@/components/Quote'
+import Reading from '@/components/Reading'
+import TechStack from '@/components/TechStack'
+import BaseLayout from '@/layouts/BaseLayout'
+import avatar from '../assets/images/avatar.png'
+import { Image } from 'astro:assets'
+---
+
+<BaseLayout title='Not found page'>
+	<div
+		class='text-black dark:text-white m-auto grid gap-2 max-w-6xl overflow-hidden relative w-full p-4 sm:gap-2 md:grid-cols-3 md:gap-3 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px] pt-0'
+	>
+		<Card
+			class='col-span-1 md:col-span-3 md:row-span-2 flex flex-col md:space-y-0 md:space-x-4 md:flex-row hover:border-purple-600'
+		/>
+
+		<Card
+			class='col-span-1 md:col-span-1 md:row-span-3 hover:border-green-600 dark:hover:border-green-600'
+		>
+			<AboutMe />
+		</Card>
+		<Card
+			class='col-span-1 md:col-span-1 md:row-span-2 hover:border-blue-600 dark:hover:border-blue-600'
+		>
+			<MyLinks />
+		</Card>
+		<Card class='hidden md:block md:col-span-1 md:row-span-2 lg:hidden'>
+			<Image
+				src={avatar}
+				quality={100}
+				format='png'
+				loading='eager'
+				class='bg-slate-400 dark:bg-slate-700 rounded-md w-auto h-full object-contain'
+				alt={`Mike Hoang avatar`}
+			/>
+		</Card>
+		<Card
+			class='col-span-1 md:col-span-2 md:row-span-1 hover:border-orange-600 dark:hover:border-orange-600'
+		>
+			<TechStack />
+		</Card>
+
+		<Card
+			class='col-span-1 md:col-span-1 md:row-span-1 hover:border-yellow-600 dark:hover:border-yellow-600'
+		>
+			<Quote />
+		</Card>
+		<Card
+			class='col-span-1 md:col-span-1 md:row-span-1 hover:border-pink-600 dark:hover:border-pink-600'
+		>
+			<Learning />
+		</Card>
+		<Card
+			class='col-span-1 md:col-span-1 md:row-span-1 hover:border-slate-600 dark:hover:border-slate-600'
+		>
+			<Reading />
+		</Card>
+	</div>
+</BaseLayout>
+
+<script>
+	import { animate } from 'motion'
+	const showAnimations = localStorage.getItem('animations') === 'true'
+
+	if (showAnimations) {
+		animate(
+			'.title',
+			{ y: [80, 0], opacity: [0, 1] },
+			{
+				duration: 2.5,
+				opacity: { duration: 3 },
+
+				offset: [0, 0.55, 0.75]
+			}
+		)
+	}
+</script>
