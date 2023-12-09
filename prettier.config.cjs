@@ -2,7 +2,7 @@
 module.exports = {
 	// i am just using the standard config, change if you need something else
 	...require('prettier-config-standard'),
-	printWidth: 100,
+	printWidth: 80,
 	semi: false,
 	singleQuote: true,
 				jsxSingleQuote: true,
