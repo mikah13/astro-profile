@@ -1,4 +1,5 @@
 import { getCollection } from 'astro:content'
+import { remarkReadingTime } from './readTime'
 
 export const getCategories = async () => {
 	const posts = await getCollection('blog')
@@ -27,4 +28,11 @@ export const getPostByTag = async (tag: string) => {
 export const filterPostsByCategory = async (category: string) => {
 	const posts = await getPosts()
 	return posts.filter((post) => post.data.category.toLowerCase() === category)
+}
+
+export const getPostByReadTime = async (minute: number) => {
+	const posts = await getPosts()
+	return posts.filter(async (post) => {
+		const render = await post.render()
+	})
 }
