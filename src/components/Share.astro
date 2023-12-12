@@ -2,6 +2,7 @@
 import { siteConfig } from '@/data/site.config'
 import TwitterColorIcon from './icons/TwitterColorIcon.astro'
 import LinkedinIcon from './icons/linkedinIcon.astro'
+import FacebookIcon from './icons/FacebookIcon.astro'
 const message = siteConfig.shareMessage
 
 const URL = Astro.url.href
@@ -22,6 +23,14 @@ const URL = Astro.url.href
 				aria-label='Share on LinkedIn'
 			>
 				<LinkedinIcon /></a
+			>
+		</li>
+		<li>
+			<a
+				href={`https://www.facebook.com/sharer/sharer.php?u=${URL}`}
+				aria-label='Share on Facebook'
+			>
+				<FacebookIcon /></a
 			>
 		</li>
 	</ul>
