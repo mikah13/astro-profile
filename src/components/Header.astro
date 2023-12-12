@@ -43,10 +43,16 @@ const SOCIALNETWORKS = [
 			<div
 				class='flex flex-col gap-4 md:flex-row md:border-r-2 border-black pr-4 dark:border-white'
 			>
-				<HeaderLink href='/blog' class='flex items-center gap-1 text-2xl md:text-base'>
+				<HeaderLink
+					href='/blog'
+					class='flex items-center gap-1 text-2xl md:text-base'
+				>
 					<BlogIcon /> Blog
 				</HeaderLink>
-				<HeaderLink href='/tags' class='flex items-center gap-1 text-2xl md:text-base'>
+				<HeaderLink
+					href='/tags'
+					class='flex items-center gap-1 text-2xl md:text-base'
+				>
 					<TagIcon /> Tags
 				</HeaderLink>
 			</div>
@@ -54,7 +60,12 @@ const SOCIALNETWORKS = [
 			<div class='flex justify-center items-center md:justify-end gap-3 md:p-0'>
 				{
 					SOCIALNETWORKS.map((network) => (
-						<HeaderLink class='' href={network.url} target='_blank' aria-label={network.name}>
+						<HeaderLink
+							class=''
+							href={network.url}
+							target='_blank'
+							aria-label={network.name}
+						>
 							<span>{<network.icon />} </span>
 						</HeaderLink>
 					))
@@ -68,7 +79,11 @@ const SOCIALNETWORKS = [
 			<Search />
 		</div>
 		<ToggleTheme />
-		<button id='astro-header-drawer-button' type='button' class='md:ml-6 md:hidden'>
+		<button
+			id='astro-header-drawer-button'
+			type='button'
+			class='md:ml-6 md:hidden'
+		>
 			<MenuIcon />
 			<span class='sr-only'>Show Menu</span>
 		</button>

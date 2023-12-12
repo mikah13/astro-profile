@@ -1,9 +1,13 @@
 <script is:inline>
 	function getTheme() {
-		const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('theme')
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('theme')
 
 		return (
-			storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'dark' : 'light')
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches
+				? 'dark'
+				: 'light')
 		)
 	}
 

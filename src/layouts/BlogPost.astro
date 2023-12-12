@@ -41,7 +41,9 @@ const articleDate = pubDate.toISOString()
 				</h1>
 			</div>
 
-			<div class='flex flex-wrap justify-center items-center gap-2 gap-y-4 md:gap-5'>
+			<div
+				class='flex flex-wrap justify-center items-center gap-2 gap-y-4 md:gap-5'
+			>
 				{tags.map((tag) => <Tag tag={tag} />)}
 			</div>
 		</header>
@@ -78,7 +80,9 @@ const articleDate = pubDate.toISOString()
 			observer: IntersectionObserver
 		) {
 			entries.forEach((entry) => {
-				const index = document.querySelector(`aside a[href="#${entry.target.id}"]`)
+				const index = document.querySelector(
+					`aside a[href="#${entry.target.id}"]`
+				)
 
 				if (entry.isIntersecting) {
 					index?.classList.remove('bg-slate-200', 'dark:bg-slate-800') // remove bg

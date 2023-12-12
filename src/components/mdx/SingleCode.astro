@@ -2,6 +2,9 @@
 const props = Astro.props
 ---
 
-<code {...props} class='not-prose bg-gray-300 dark:text-black px-2 p-1 rounded-md mx-1 slate-code'>
+<code
+	{...props}
+	class='not-prose bg-gray-300 dark:text-black px-2 p-1 rounded-md mx-1 slate-code'
+>
 	<slot />
 </code>

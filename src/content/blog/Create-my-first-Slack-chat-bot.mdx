@@ -175,7 +175,11 @@ So you need to remind the youtubeKey with your API key you got from the Google D
 So far, our bot can only follow what we instruct them in a hard-coded way. To make it smarter and more like 'human', let's use a library called Cleverbot.io. So let's replace all the controller.hears function we wrote with this:
 
 ```javascript
-controller.hears('', 'direct_message,direct_mention,mention', function (bot, message) {})
+controller.hears(
+	'',
+	'direct_message,direct_mention,mention',
+	function (bot, message) {}
+)
 ```
 
 So the final code at this point should be like:
@@ -185,7 +189,11 @@ var Botkit = require('botkit')
 var request = require('request-promise')
 var controller = Botkit.slackbot({ debug: true })
 controller.spawn({ token: slackToken }).startRTM()
-controller.hears('', 'direct_message,direct_mention,mention', function (bot, message) {})
+controller.hears(
+	'',
+	'direct_message,direct_mention,mention',
+	function (bot, message) {}
+)
 ```
 
 Now, let's install the Cleverbot library. Type the following in the Terminal:
@@ -212,16 +220,20 @@ cleverbot.create(function (err, session) {
 Final step, add this code snippet to the hear function:
 
 ```javascript
-controller.hears('', 'direct_message,direct_mention,mention', function (bot, message) {
-	var msg = message.text
-	cleverbot.ask(msg, function (err, response) {
-		if (!err) {
-			bot.reply(message, response)
-		} else {
-			console.log('cleverbot err: ' + err)
-		}
-	})
-})
+controller.hears(
+	'',
+	'direct_message,direct_mention,mention',
+	function (bot, message) {
+		var msg = message.text
+		cleverbot.ask(msg, function (err, response) {
+			if (!err) {
+				bot.reply(message, response)
+			} else {
+				console.log('cleverbot err: ' + err)
+			}
+		})
+	}
+)
 ```
 
 The final code should be like:
@@ -241,16 +253,20 @@ var Botkit = require('botkit')
 var request = require('request-promise')
 var controller = Botkit.slackbot({ debug: true })
 controller.spawn({ token: slackToken }).startRTM()
-controller.hears('', 'direct_message,direct_mention,mention', function (bot, message) {
-	var msg = message.text
-	cleverbot.ask(msg, function (err, response) {
-		if (!err) {
-			bot.reply(message, response)
-		} else {
-			console.log('cleverbot err: ' + err)
-		}
-	})
-})
+controller.hears(
+	'',
+	'direct_message,direct_mention,mention',
+	function (bot, message) {
+		var msg = message.text
+		cleverbot.ask(msg, function (err, response) {
+			if (!err) {
+				bot.reply(message, response)
+			} else {
+				console.log('cleverbot err: ' + err)
+			}
+		})
+	}
+)
 ```
 
 And don't forget to enter this magic line to start your very first Slack bot:
