@@ -34,5 +34,12 @@ export const getPostByReadTime = async (minute: number) => {
 	const posts = await getPosts()
 	return posts.filter(async (post) => {
 		const render = await post.render()
+		const time = render.remarkPluginFrontmatter.minutesRead
+		console.log(time)
 	})
+}
+
+export const getPostByYear = async (year: number) => {
+	const posts = await getPosts()
+	return posts.filter((post) => post.data.pubDate.getFullYear() === year)
 }
