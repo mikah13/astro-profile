@@ -11,6 +11,7 @@ import BaseLayout from '@/layouts/BaseLayout'
 import avatar from '../assets/images/avatar.png'
 import { Image } from 'astro:assets'
 import MyStat from '@/components/MyStat'
+import Building from '@/components/Building'
 ---
 
 <BaseLayout title='Home'>
@@ -66,7 +67,7 @@ import MyStat from '@/components/MyStat'
 		<Card
 			class='col-span-1 md:col-span-1 md:row-span-1 hover:border-yellow-600 dark:hover:border-yellow-600'
 		>
-			<MyStat client:load />
+			<Building />
 		</Card>
 	</div>
 </BaseLayout>
