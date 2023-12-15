@@ -34,7 +34,8 @@
 	},
 	"dependencies": {
 		"@astrojs/rss": "4.0.1",
-		"astro": "4.0.3"
+		"astro": "4.0.3",
+		"octokit": "^3.1.2"
 	},
 	"devDependencies": {
 		"@astrojs/mdx": "2.0.0",

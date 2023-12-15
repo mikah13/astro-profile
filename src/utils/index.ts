@@ -1,3 +1,4 @@
+export { colors } from './colors'
 export { sluglify, unsluglify } from './sluglify'
 export { cn } from './cn'
 export {

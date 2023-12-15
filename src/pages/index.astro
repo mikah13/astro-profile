@@ -10,6 +10,7 @@ import TechStack from '@/components/TechStack'
 import BaseLayout from '@/layouts/BaseLayout'
 import avatar from '../assets/images/avatar.png'
 import { Image } from 'astro:assets'
+import MyStat from '@/components/MyStat'
 ---
 
 <BaseLayout title='Home'>
@@ -49,14 +50,9 @@ import { Image } from 'astro:assets'
 		<Card
 			class='col-span-1 md:col-span-2 md:row-span-1 hover:border-orange-600 dark:hover:border-orange-600'
 		>
-			<TechStack />
-		</Card>
-
-		<Card
-			class='col-span-1 md:col-span-1 md:row-span-1 hover:border-yellow-600 dark:hover:border-yellow-600'
-		>
 			<Quote />
 		</Card>
+
 		<Card
 			class='col-span-1 md:col-span-1 md:row-span-1 hover:border-pink-600 dark:hover:border-pink-600'
 		>
@@ -66,6 +62,11 @@ import { Image } from 'astro:assets'
 			class='col-span-1 md:col-span-1 md:row-span-1 hover:border-slate-600 dark:hover:border-slate-600'
 		>
 			<Reading />
+		</Card>
+		<Card
+			class='col-span-1 md:col-span-1 md:row-span-1 hover:border-yellow-600 dark:hover:border-yellow-600'
+		>
+			<MyStat client:load />
 		</Card>
 	</div>
 </BaseLayout>
