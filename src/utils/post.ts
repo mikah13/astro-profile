@@ -35,7 +35,6 @@ export const getPostByReadTime = async (minute: number) => {
 	return posts.filter(async (post) => {
 		const render = await post.render()
 		const time = render.remarkPluginFrontmatter.minutesRead
-		console.log(time)
 	})
 }
 

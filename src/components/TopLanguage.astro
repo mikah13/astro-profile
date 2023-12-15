@@ -14,8 +14,6 @@ const langs = [...topLang.entries()]
 		return e
 	})
 
-console.log({ total, langs })
-
 const getStyle = (index: number, length: number) => {
 	if (index === 0) return `rounded-l-full`
 	if (index === length - 1) return `rounded-r-full`
@@ -43,4 +41,13 @@ const getColorCode = (language: string, index: number) => {
 			})
 		}
 	</div>
+</div>
+
+<div class='flex flex-row justify-between text-sm'>
+	<div>TypeScript</div>
+	<div>TypeScript</div>
+</div>
+<div class='flex flex-row justify-between text-sm'>
+	<div>TypeScript</div>
+	<div>TypeScript</div>
 </div>
