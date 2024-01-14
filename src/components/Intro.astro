@@ -4,22 +4,40 @@ import { Image } from 'astro:assets'
 import avatar from '../assets/images/avatar.png'
 ---
 
-<div class='flex flex-col justify-between mt-4 md:mt-0'>
-	<p class='m-0 font-light text-xl'>
-		Hi, I'm <span class='font-bold'>Mike Hoang</span>, currently working in
-		Vancouver, Canada. I like to build things with TypeScript, React, and
-		playing with the JS ecosystem.
-	</p>
-</div>
-<div class='h-full order-first lg:order-last lg:w-[300px] md:hidden lg:block'>
-	<Image
-		src={avatar}
-		width={200}
-		height={200}
-		quality={100}
-		format='png'
-		loading='eager'
-		class='bg-slate-400 dark:bg-slate-700 rounded-md w-auto max-h-[200px] md:max-h-[150px] object-contain'
-		alt={`Mike Hoang avatar`}
-	/>
+<style>
+	@import url('https://cdn.jsdelivr.net/gh/dheereshagrwal/colored-icons@1.7.3/src/app/ci.min.css');
+</style>
+<div class='flex flex-row justify-between md:mt-0 space-x-4 lg:space-x-6'>
+	<div class='flex flex-col justify-between space-y-4'>
+		<p class='m-0 font-light text-md lg:text-xl'>
+			Hi, I'm <span class='font-bold'>Mike Hoang</span>, currently working in
+			Vancouver, Canada. I like to build things with TypeScript, React, and
+			playing with the JS ecosystem.
+		</p>
+		<div>
+			<i class='ci ci-ts ci-2x'></i>
+			<i class='ci ci-reactjs ci-2x'></i>
+			<i class='ci ci-nodejs ci-2x'></i>
+			<i class='ci ci-nextjs ci-2x'></i>
+			<i class='ci ci-tailwind ci-2x'></i>
+			<i class='ci ci-mongodb ci-2x'></i>
+			<i class='ci ci-mysql ci-2x'></i>
+			<i class='ci ci-postgresql ci-2x'> </i>
+			<i class='ci ci-azure ci-2x'></i>
+			<i class='ci ci-aws dark:hidden ci-2x'></i>
+			<i class='ci ci-aws ci-aws-light ci-2x hidden dark:inline ci-2x'></i>
+		</div>
+	</div>
+	<div class='h-full lg:w-[300px] md:hidden lg:block'>
+		<Image
+			src={avatar}
+			width={200}
+			height={200}
+			quality={100}
+			format='png'
+			loading='eager'
+			class='bg-slate-400 dark:bg-slate-700 rounded-md w-auto max-h-[200px] md:max-h-[150px] object-contain'
+			alt={`Mike Hoang avatar`}
+		/>
+	</div>
 </div>
