@@ -12,6 +12,7 @@ import avatar from '../assets/images/avatar.png'
 import { Image } from 'astro:assets'
 import MyStat from '@/components/MyStat'
 import Building from '@/components/Building'
+import Projects from '@/components/Projects'
 ---
 
 <BaseLayout title='Home'>
@@ -36,7 +37,7 @@ import Building from '@/components/Building'
 		<Card
 			class='col-span-1 md:col-span-1 md:row-span-2 hover:border-blue-600 dark:hover:border-blue-600'
 		>
-			<TechStack />
+			<Projects />
 		</Card>
 		<Card class='hidden md:block md:col-span-1 md:row-span-2 lg:hidden'>
 			<Image
