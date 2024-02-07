@@ -8,6 +8,7 @@ import Quote from '@/components/Quote'
 import Reading from '@/components/Reading'
 import BaseLayout from '@/layouts/BaseLayout'
 import avatar from '../assets/images/avatar.png'
+import cupcake from '../assets/images/cupcake.png'
 import { Image } from 'astro:assets'
 import Building from '@/components/Building'
 import Projects from '@/components/Projects'
@@ -43,7 +44,7 @@ import Projects from '@/components/Projects'
 				quality={100}
 				format='png'
 				loading='eager'
-				class='bg-slate-400 dark:bg-slate-700 rounded-md w-auto h-full object-contain'
+				class='bg-blue-400 dark:bg-slate-300 rounded-md w-auto max-h-[200px] md:max-h-[150px] object-contain'
 				alt={`Mike Hoang avatar`}
 			/>
 		</Card>
@@ -66,7 +67,17 @@ import Projects from '@/components/Projects'
 		<Card
 			class='col-span-1 md:col-span-1 md:row-span-1 hover:border-yellow-600 dark:hover:border-yellow-600'
 		>
-			<Building />
+			<div class='flex flex-col space-y-2'>
+				<h2 class='text-xl font-bold m-0'>My Drawing</h2>
+				<Image
+					src={cupcake}
+					quality={100}
+					format='png'
+					loading='eager'
+					class='bg-pink-200 dark:bg-transparent rounded-md w-auto h-full object-contain max-h-36'
+					alt={`Mike Hoang avatar`}
+				/>
+			</div>
 		</Card>
 	</div>
 </BaseLayout>
