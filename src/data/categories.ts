@@ -1,2 +1,6 @@
 // List of categories for blog posts
-export const CATEGORIES = ['Software Development', 'Bookmark'] as const
+export const CATEGORIES = [
+	'Software Development',
+	'Personal Development',
+	'Bookmark'
+] as const
