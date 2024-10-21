@@ -41,7 +41,7 @@
 		"@astrojs/sitemap": "3.1.1",
 		"@astrojs/tailwind": "5.1.0",
 		"@pagefind/default-ui": "^1.0.4",
-		"@tailwindcss/typography": "0.5.10",
+		"@tailwindcss/typography": "0.5.15",
 		"@tinacms/cli": "^1.5.39",
 		"@typescript-eslint/parser": "^6.21.0",
 		"clsx": "2.0.0",
