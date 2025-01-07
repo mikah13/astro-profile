@@ -32,12 +32,6 @@ The documentation for Tina CMS can be found [here](https://tina.io/docs/)
 
 ## 💪 Features:
 
-<p align="center">
-  <a href="https://pagespeed.web.dev/analysis/https-blog-template-gray-vercel-app/7ovjfewos9?form_factor=mobile">
-    <img width="510" alt="openblog Lighthouse Score" src="public/openblog-lighthouse-score.svg">
-  <a>
-</p>
-    
 - ✅ Minimal styling
 - ✅ Mobile responsive
 - ✅ 100/100 Lighthouse performance
