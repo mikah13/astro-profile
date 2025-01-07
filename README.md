@@ -1,13 +1,3 @@
-<div align="center">
-
-<hr/>
-
-<h3 align="center">
- Hi, I'm Mike Hoang and this is my personal website built with Astro
-</h3>
-
-</div>
-
 ## 📌 Table Of Contents
 
 - [📌 Table Of Contents](#-table-of-contents)
