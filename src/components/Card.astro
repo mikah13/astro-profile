@@ -5,10 +5,84 @@ const { class: className } = Astro.props
 
 <div
 	class={cn(
-		'card group overflow-hidden opacity-0 bg-zinc-50 dark:bg-zinc-950 shadow-lg dark:shadow-dark dark:shadow-zinc-500/10 rounded-lg p-4 py-5 border-[1.5px] border-zinc-100 dark:border-zinc-900 hover:border-zinc-500 dark:hover:border-purple-800 align-start flex-none h-full justify-start relative transform perspective-1200 w-full transition duration-75 ease-in-out',
+		'card group relative cursor-pointer',
+		'overflow-hidden',
+		'bg-zinc-200/10 dark:bg-zinc-900/50',
+		'backdrop-blur-md',
+		'shadow-lg shadow-black/5 dark:shadow-purple-900/30',
+		'rounded-xl',
+		'p-4 py-5',
+		'border border-zinc-200/50 dark:border-zinc-800/30',
+		'hover:border-white/40 dark:hover:border-purple-500/30',
+		'hover:bg-white/20 dark:hover:bg-zinc-800/20',
+		'align-start flex-none h-full justify-start',
+		'transform perspective-1200',
+		'transition-all duration-300 ease-out',
+		'animate-fadeIn hover:scale-105', // Increased scale on hover
+		'hover:shadow-xl hover:shadow-black/10 dark:hover:shadow-zinc-800/20', // Enhanced shadow on hover
+		'hover:-translate-y-1', // Slight lift on hover
 		className
 	)}
-	style='transform: translateY(var(--motion-translateY)); --motion-translateY: 0%; opacity: 1;'
 >
+	<!-- Optional light gradient effect -->
+	<div
+		class='absolute inset-0 bg-gradient-to-br from-white/5 to-transparent dark:from-purple-500/5 pointer-events-none'
+	>
+	</div>
+
+	<!-- Optional subtle border highlight -->
+	<div
+		class='absolute inset-0 border border-white/10 dark:border-purple-500/5 rounded-xl pointer-events-none'
+	>
+	</div>
+
 	<slot />
 </div>
+
+<style>
+	/* Base animations */
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/* Utility classes */
+	.animate-fadeIn {
+		animation: fadeIn 0.4s ease-out forwards;
+	}
+
+	/* Optional: Add animation delay for staggered effects */
+	.group:nth-child(2) {
+		animation-delay: 0.1s;
+	}
+	.group:nth-child(3) {
+		animation-delay: 0.2s;
+	}
+	.group:nth-child(4) {
+		animation-delay: 0.3s;
+	}
+
+	/* Smooth scale transition */
+	.card {
+		will-change: transform;
+		transform-origin: center center;
+		transition:
+			transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+			box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+			border-color 0.3s ease-out,
+			background-color 0.3s ease-out;
+	}
+
+	/* Enhanced hover effect with smooth transition */
+	@media (hover: hover) {
+		.card:hover {
+			transform: scale(1.05) translateY(-4px);
+		}
+	}
+</style>
