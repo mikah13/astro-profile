@@ -31,5 +31,5 @@ export default defineConfig({
             wrap: true
         },
         drafts: true
-		}), sitemap(), tailwind(), react()]
+    }), sitemap(), tailwind(), react({ experimentalReactChildren: true, })]
 })

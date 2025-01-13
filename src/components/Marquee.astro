@@ -1,0 +1,106 @@
+---
+// src/components/Marquee.astro
+---
+
+<script>
+	import { animate, scroll, inView } from 'motion'
+
+	class MarqueeElement extends HTMLElement {
+		constructor() {
+			super()
+			this.init()
+		}
+
+		init() {
+			const container = this.querySelector('.marquee-container') as HTMLElement
+			const content = this.querySelector('.marquee-content') as HTMLElement
+			const duration = Number(this.getAttribute('data-duration')) || 20
+			const direction = this.getAttribute('data-direction') || 'left'
+			const pauseOnHover = this.getAttribute('data-pause-on-hover') === 'true'
+
+			// Clone content for seamless loop
+			content.innerHTML += content.innerHTML
+
+			// Calculate animation parameters
+			const contentWidth = content.scrollWidth / 2
+			const animationDistance =
+				direction === 'left' ? -contentWidth : contentWidth
+
+			// Set up keyframe animation
+			content.style.setProperty('transform', `translateX(0px)`)
+			content.style.setProperty(
+				'animation',
+				`marquee ${duration}s linear infinite`
+			)
+
+			// Add keyframes dynamically
+			const marqueeStyle = document.createElement('style')
+			marqueeStyle.textContent = `
+		@keyframes marquee {
+			from {
+				transform: translateX(0);
+			}
+			to {
+				transform: translateX(${animationDistance}px);
+			}
+		}
+	`
+			document.head.appendChild(marqueeStyle)
+
+			// Pause on hover if enabled
+			if (pauseOnHover) {
+				container.addEventListener('mouseenter', () => {
+					content.style.animationPlayState = 'paused'
+				})
+
+				container.addEventListener('mouseleave', () => {
+					content.style.animationPlayState = 'running'
+				})
+			}
+
+			// Pause when not in view for performance
+			inView(container, () => {
+				content.style.animationPlayState = 'running'
+				return () => {
+					content.style.animationPlayState = 'paused'
+				}
+			})
+		}
+	}
+
+	// Register custom element
+	customElements.define('astro-marquee', MarqueeElement)
+</script>
+
+<astro-marquee
+	class='marquee'
+	data-duration={Astro.props.duration}
+	data-direction={Astro.props.direction}
+	data-pause-on-hover={Astro.props.pauseOnHover}
+>
+	<div class='marquee-container'>
+		<div class='marquee-content'>
+			<slot />
+		</div>
+	</div>
+</astro-marquee>
+
+<style>
+	.marquee {
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.marquee-container {
+		width: 100%;
+		display: flex;
+		overflow: hidden;
+	}
+
+	.marquee-content {
+		display: flex;
+		flex-shrink: 0;
+		gap: 2rem;
+		white-space: nowrap;
+	}
+</style>

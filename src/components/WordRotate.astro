@@ -1,0 +1,98 @@
+---
+import { cn } from '@/utils'
+interface Props {
+	words?: string[]
+	class?: string
+	prefix?: string
+	duration?: number
+}
+
+const {
+	words = ['Developer', 'Designer', 'Creator', 'Builder'],
+	prefix = 'I am a',
+	class: className,
+	duration = 2000 // Duration in milliseconds
+} = Astro.props
+---
+
+<div class={cn('flex items-center gap-2 text-lg', className)}>
+	<span class='w-max min-w-fit'>{prefix}</span>
+	<div
+		class='word-rotate-wrapper min-h-[1.4em] h-fit overflow-hidden relative min-w-fit w-full'
+	>
+		{
+			words.map((word, index) => (
+				<span
+					class='word-rotate-item absolute left-0 top-0 opacity-0'
+					data-index={index}
+				>
+					{word}
+				</span>
+			))
+		}
+	</div>
+</div>
+
+<style>
+	.word-rotate-item {
+		@apply font-bold text-purple-600 dark:text-purple-400;
+		transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+		transform: translateY(50px);
+	}
+
+	.word-rotate-item.active {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.word-rotate-item.exit {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+</style>
+
+<script define:vars={{ duration }}>
+	function setupWordRotation() {
+		const items = document.querySelectorAll('.word-rotate-item')
+		let currentIndex = 0
+
+		// Set initial state
+		items[0].classList.add('active')
+
+		function rotateWords() {
+			// Remove classes from current item
+			items[currentIndex].classList.remove('active')
+			items[currentIndex].classList.add('exit')
+
+			// Update index
+			currentIndex = (currentIndex + 1) % items.length
+
+			// Remove exit class from previous item after animation
+			setTimeout(() => {
+				items.forEach((item, index) => {
+					if (index !== currentIndex) {
+						item.classList.remove('exit')
+					}
+				})
+			}, 400) // Match transition duration
+
+			// Add active class to new item
+			items[currentIndex].classList.add('active')
+		}
+
+		// Start rotation
+		const interval = setInterval(rotateWords, duration)
+
+		// Cleanup on page change
+		document.addEventListener('astro:before-swap', () => {
+			clearInterval(interval)
+		})
+	}
+
+	// Run setup when the DOM is ready
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', setupWordRotation)
+	} else {
+		setupWordRotation()
+	}
+</script>
