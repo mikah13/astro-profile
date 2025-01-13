@@ -39,7 +39,7 @@
 		"react-dom": "^19.0.0"
 	},
 	"devDependencies": {
-		"@astrojs/mdx": "4.0.3",
+		"@astrojs/mdx": "4.0.5",
 		"@astrojs/sitemap": "3.2.1",
 		"@astrojs/tailwind": "5.1.4",
 		"@pagefind/default-ui": "^1.3.0",
